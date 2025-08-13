@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <button>Open Box</button>
+
+  <div class="box-outer">
+    <div class="box">
+      <p class="close-icon">X</p>
+      <p>lorem ipsum dolor sit amet</p>
+    </div>
+  </div>
+
+  <script>
+    const button = document.querySelector("button");
+    const boxOuter = document.querySelector(".box-outer");
+    const closeIcon = document.querySelector(".close-icon");
+
+    button.addEventListener("click", () => {
+      boxOuter.style.display = "flex";
+    });
+
+    closeIcon.addEventListener("click", () => {
+      boxOuter.style.display = "none";
+    });
+
+    boxOuter.addEventListener("click", (e) => {
+      if (e.target === boxOuter) {
+        boxOuter.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
